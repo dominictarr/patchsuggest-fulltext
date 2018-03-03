@@ -8,12 +8,12 @@
     "url": "git://github.com/dominictarr/patchsuggest-fulltext.git"
   },
   "dependencies": {
+    "highlight-search-result": "^1.0.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
   "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (dominictarr.com)",
-  "license": "MIT"  
+  "license": "MIT"
 }
