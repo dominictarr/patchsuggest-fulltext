@@ -50,13 +50,15 @@ exports.create = function (api) {
             if(!text) return
             return {
               title: highlight(text, word, 250),
-              value: '['+word+']('+data.key+')'
+              value: '['+word.split(/[^\w]+/gi).join(' ')+']('+data.key+')'
             }
           })
       },
 
       search: function (word) {
-        if(nonEmpty(word))
+        //select only words that start with \w to make space
+        //for sigils!
+        if(/^\w/.test(word.trim()) && nonEmpty(word))
           return create(10, function (data) {
             var text = data.value.content.text
             if(!text) return
